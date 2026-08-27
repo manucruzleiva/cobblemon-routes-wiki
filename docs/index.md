@@ -29,12 +29,12 @@ and every raid den on your map. Documentation for all of them lives here.
     ### [Routes](routes/index.md)
 
     Worldgen roads that connect the structures already in your world, plus named routes, areas and
-    towns, route trainers, and full Xaero map integration. The world stops being a random field and
-    starts being a region.
+    towns, and full Xaero map integration. The world stops being a random field and starts being a
+    region. Works with or without Cobblemon.
 
     [Getting started →](routes/getting-started.md)
 
-    <span class="badge badge--primary">MC 1.21.1</span> <span class="badge">Cobblemon 1.7.3</span> <span class="badge">Fabric</span> <span class="badge">NeoForge</span>
+    <span class="badge badge--primary">MC 1.21.1</span> <span class="badge">Fabric</span> <span class="badge">NeoForge</span>
 
 -   [![Cobblemon Picnic](picnic/assets/logo.png){ .mod-logo }](picnic/index.md)
 
@@ -89,8 +89,11 @@ and every raid den on your map. Documentation for all of them lives here.
 
 -   ### :material-download: Installing
 
-    Every mod needs **Minecraft 1.21.1** and **Cobblemon 1.7.3**, on either **Fabric** or
-    **NeoForge**. Drop the jar for your loader into `mods/` — never both jars at once.
+    Every mod needs **Minecraft 1.21.1** on either **Fabric** or **NeoForge**. Drop the jar for your
+    loader into `mods/` — never both jars at once.
+
+    The Cobblemon mods also need **Cobblemon 1.7.3**. **Routes does not** — it is a worldgen road
+    mod, and it builds the same roads in a world with no Pokémon in it.
 
     Each mod's *Getting Started* page lists its own dependencies.
 
