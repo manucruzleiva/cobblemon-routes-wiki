@@ -236,8 +236,11 @@ Cures **your own negative status effects** (poison, wither, blindness, slowness,
 **Aim at a creature to tie yourself to it.** For a short window after that, however you die — a
 mob, a fall, lava, your own Explosion — it dies too, wherever it happens to be standing.
 
-You choose who you are taking with you, and then you have to be right. Other players cannot be
-bound.
+You choose who you are taking with you, and then you have to be right.
+
+**Another player can be bound**, and they are told when it happens — being tied to someone is
+something you should get to play around. On a server with PvP switched off it refuses: that setting
+means what it says.
 
 ---
 
@@ -478,15 +481,18 @@ Two different tools, and **what you were already doing decides which you meant**
 ---
 
 ### <img class="hm-disc" src="../../../assets/items/hm_substitute.png" alt=""> Substitute
-**Hunger:** 4 · **Cooldown:** 20s · **Power:** 2400t (**2 minutes**)
+**Hunger:** 4 · **Cooldown:** 20s · **Power:** 400t (**20 seconds**)
 
 Leaves a decoy of you standing where you were — **wearing your name** and walking off under its own
 steam — and **turns you invisible for two seconds** so you can be somewhere else by the time
 anything looks up. Cast it at a run and the decoy carries your momentum off in roughly your
-direction; cast it standing and it picks a bearing of its own. It steps over anything knee-high in
-its way. Hostile creatures already hunting you switch to
-the decoy while it stands, so it buys you a way out of a fight. Casting it again replaces the decoy
-rather than adding a second.
+direction; cast it standing and it stands still, because a double that wanders off while you are
+frozen behind a tree is not a double. It steps over anything knee-high in its way. Hostile creatures
+already hunting you switch to the decoy while it stands, so it buys you a way out of a fight.
+
+**It takes the hits meant for you, and there are only so many of them.** A decoy soaks up about as
+much punishment as you can before it bursts — and it is gone on its own after twenty seconds either
+way. Casting it again replaces the decoy rather than adding a second.
 
 ---
 

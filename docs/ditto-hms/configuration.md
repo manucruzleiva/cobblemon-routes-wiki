@@ -163,7 +163,7 @@ what the config takes.
 | Revival Blessing | 1 | 20 min | — |
 | Charm | 2 | 3s | follow duration in ticks — **2400** |
 | Stockpile | 1 | 1s | lava self-damage — **7** |
-| Substitute | 4 | 20s | decoy lifetime in ticks — **2400** |
+| Substitute | 4 | 20s | decoy lifetime in ticks — **400** |
 | Thief | 2 | 5s | 1 |
 | Charge | 2 | 3s | ticks between sparks — **10** |
 | Destiny Bond | 4 | 30s | how long the bond holds — **200** |

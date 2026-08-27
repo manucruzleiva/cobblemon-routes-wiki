@@ -6,6 +6,30 @@
 All notable changes are documented here.
 Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) + SemVer.
 
+## [2.2.1] - 2026-08-21
+
+A hotfix. Two of these follow you out of the session they happened in, which is why it is not
+waiting for the rest of the list.
+
+### 🐛 Fixed
+- **Confusion no longer comes back every time you take a portal.** Anyone who had been confused once
+  got the whole effect again on every trip to the Nether and on every respawn — inverted controls,
+  inverted camera, from a Confusion that had ended minutes ago. It now counts down properly, and
+  stepping through a portal or waking up at your bed **ends** it instead of starting it over (#75).
+- **Protect can no longer leave you invulnerable forever.** Dropping out of the world during
+  Protect's one second used to bring you back untouchable, permanently, with nothing in the game
+  able to undo it — including a second Protect, which made it worse. The second is now settled the
+  moment you log back in, and casting Protect while Protect is already up no longer confuses it
+  about whose invulnerability it is holding (#76).
+- **Defog clears Confusion**, which is exactly the sort of thing a move that "clears away any
+  harmful conditions affecting you" ought to have been clearing all along (#77).
+- **Camouflage copies the shine.** Disguise yourself as a shiny and you are drawn as a shiny; it
+  used to quietly hand you the ordinary colours (#78).
+
+### 🎯 Improved
+- **Defog is the answer to Obstruct.** Aim it at a sealed container and the seal lifts — one
+  container, at arm's length, so it counters a seal rather than wiping a base clean (#77).
+
 ## [2.2.0] - 2026-08-20
 
 Everything since 2.1.0, gathered into one release: **eighteen new HMs**, a second way to pay for

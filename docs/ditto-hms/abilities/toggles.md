@@ -247,10 +247,13 @@ point.
 Anything that means you harm **flees from you**, running away with real pathfinding — exactly like
 creepers running from a cat (they even sprint when you get close).
 
-That covers the mobs the game calls hostile, and **any Pokémon that is currently hunting you** —
-wild Cobblemon are not hostile by species, they pick fights by behaviour, so the test is whether one
-has decided to come for you. Everything else in the field is left exactly where it is, and other
-players are never affected.
+**And it cannot land a blow on you while it is in range.** Turning something around does not stop
+the swing it is already making, or the one it takes the moment it decides to come back, so the hit
+is refused outright: inside the radius, a hostile mob or a Pokémon simply cannot hurt you.
+
+That covers the mobs the game calls hostile and any Pokémon — wild Cobblemon are not hostile by
+species, they pick fights by behaviour. Everything else in the field is left exactly where it is,
+and **other players are never affected**: Mean Look is not a shield against people.
 
 ---
 
