@@ -1,0 +1,53 @@
+<div class="hero hero--mod" markdown>
+
+![Cobblemon Raid Icons](assets/logo.png){ .hero-logo }
+
+<div class="hero-copy" markdown>
+
+# Cobblemon Raid Icons
+
+Raid dens are easy to walk past and impossible to find again. This draws every one of them on your
+map as its **tera type icon** — on the minimap and the world map alike — so the fire den you wanted
+is one glance away, and the six you don't want stay out of the way.
+
+It runs entirely on your client. The server never needs to know you have it.
+
+<span class="badge">MC 1.21.1</span> <span class="badge">Fabric</span> <span class="badge">NeoForge</span> <span class="badge">Client-side</span>
+
+<div class="hero-actions" markdown>
+[Get started](getting-started.md){ .md-button }
+[The icons](map-icons.md){ .md-button }
+</div>
+
+</div>
+</div>
+
+## What can it do?
+
+<div class="grid cards" markdown>
+
+- :material-map-marker-radius: **[Icons on both maps](map-icons.md)** — the den's tera type, drawn on
+  Xaero's minimap and on the world map.
+- :material-tooltip-text: **[A tooltip that names the den](map-icons.md#the-tooltip)** — hover a den
+  on the world map for the Pokémon waiting in it, its star tier and its tera type.
+- :material-filter: **[Filters](configuration.md)** — hide the tiers you have outgrown, the types you
+  are not hunting, and the dens that are not active.
+- :material-console: **[`/raidicons`](commands.md)** — one command that says what the mod can see,
+  for when a den is not showing up.
+
+</div>
+
+## Get it
+
+| | |
+|---|---|
+| **Needs** | Minecraft 1.21.1 · [Cobblemon Raid Dens](https://modrinth.com/mod/cobblemonraiddens) ([CurseForge](https://www.curseforge.com/minecraft/mc-mods/cobblemonraiddens)) |
+| **For the icons** | [Xaero's Minimap](https://modrinth.com/mod/xaeros-minimap) ([CurseForge](https://www.curseforge.com/minecraft/mc-mods/xaeros-minimap)) and/or [Xaero's World Map](https://modrinth.com/mod/xaeros-world-map) ([CurseForge](https://www.curseforge.com/minecraft/mc-mods/xaeros-world-map)) |
+| **Fabric** | [Fabric API](https://modrinth.com/mod/fabric-api) + [Fabric Language Kotlin](https://modrinth.com/mod/fabric-language-kotlin) |
+| **NeoForge** | [Kotlin for Forge](https://modrinth.com/mod/kotlin-for-forge) |
+| **Bugs & ideas** | Post in the [Discord](https://discord.gg/SwcwXcCN4k) — it files the ticket for you |
+
+New here? Start with **[Getting Started](getting-started.md)**.
+
+**License** — custom, *"If you make money, I make money."* Free to use and share for free; commercial
+use needs a revenue-share agreement. [Full text](../license.md).

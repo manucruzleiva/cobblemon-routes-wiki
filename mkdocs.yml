@@ -1,6 +1,7 @@
 site_name: Modding Wiki
 site_description: >-
-  The single wiki for every Cobblemon mod by shiero — Routes, Nuzlocke & Soul Link, Picnic and Ditto HMs.
+  The single wiki for every Cobblemon mod by shiero — Routes, Nuzlocke & Soul Link, Picnic, Ditto HMs
+  and Raid Icons.
 site_url: https://manucruzleiva.github.io/mod-wiki/
 # Sin `repo_url` a proposito: Material lo dibuja en el header con el contador de estrellas y forks,
 # que no le dice nada a quien viene a leer como se instala un mod. El repo no se enlaza en ningun
@@ -164,6 +165,13 @@ nav:
       - Configuration: ditto-hms/configuration.md
       - Changelog: ditto-hms/changelog.md
       - Community Credits: ditto-hms/credits.md
+  - Cobblemon Raid Icons:
+      - raid-icons/index.md
+      - Getting Started: raid-icons/getting-started.md
+      - The Icons: raid-icons/map-icons.md
+      - Commands: raid-icons/commands.md
+      - Configuration: raid-icons/configuration.md
+      - Community Credits: raid-icons/credits.md
   - 💛 Sponsor shiero: https://github.com/sponsors/manucruzleiva
 
 hooks:

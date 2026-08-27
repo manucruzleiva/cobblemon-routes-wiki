@@ -8,9 +8,9 @@ hide:
 
 # Cobblemon mods by shiero
 
-Four mods that turn a Cobblemon world into an adventure: roads and towns worth exploring, a
-Nuzlocke that enforces itself, a picnic table that bends the spawns, and every HM in your own
-hands. Documentation for all of them lives here.
+Five mods that turn a Cobblemon world into an adventure: roads and towns worth exploring, a
+Nuzlocke that enforces itself, a picnic table that bends the spawns, every HM in your own hands,
+and every raid den on your map. Documentation for all of them lives here.
 
 <div class="hero-actions" markdown>
 [Browse the mods](#the-mods){ .md-button }
@@ -70,6 +70,17 @@ hands. Documentation for all of them lives here.
 
     <span class="badge badge--primary">MC 1.21.1</span> <span class="badge">Fabric</span> <span class="badge">NeoForge</span> <span class="badge">Requires Routes</span>
 
+-   [![Cobblemon Raid Icons](raid-icons/assets/logo.png){ .mod-logo }](raid-icons/index.md)
+
+    ### [Cobblemon Raid Icons](raid-icons/index.md)
+
+    Every Cobblemon Raid Dens crystal drawn on your minimap and world map as its **tera type icon**,
+    with a tooltip naming the Pokémon inside. Client-side: install it and play on any server.
+
+    [Getting started →](raid-icons/getting-started.md)
+
+    <span class="badge badge--primary">MC 1.21.1</span> <span class="badge">Fabric</span> <span class="badge">NeoForge</span> <span class="badge">Client-side</span>
+
 </div>
 
 ## Start here
@@ -86,16 +97,17 @@ hands. Documentation for all of them lives here.
 -   ### :material-tune: Configuring
 
     Routes and Nuzlocke are set up on the **world-creation screen** and stored with that world.
-    Picnic and Ditto HMs use in-game config: a command, or the settings screen via Mod Menu.
+    Picnic and Ditto HMs use in-game config: a command, or the settings screen via Mod Menu. Raid
+    Icons reads a settings file in your `config/` folder.
 
     See each mod's *Configuration* page.
 
 -   ### :material-map-search: Finding things
 
     Every section follows the same order: **Getting Started**, the mod's own feature pages,
-    **Commands**, **Configuration**, **Reporting**, **Roadmap**, **Credits**, **License**.
+    **Commands**, **Configuration**, **Community Credits**.
 
-    The search box at the top covers all four mods at once.
+    The search box at the top covers every mod at once.
 
 </div>
 

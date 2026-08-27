@@ -84,6 +84,18 @@ thing worth getting right.
     **Pokémon move** it is based on, what it should **do in Minecraft**, and whether it feels like an
     **active** (press to use, costs hunger) or a **toggle** (passive, blocks part of your hunger bar).
 
+=== "Raid Icons"
+
+    - The output of **`/raidicons`** while aiming at the den that is misbehaving. It carries almost
+      everything a report on this mod needs, and it goes to `logs/latest.log` too.
+    - Which **Xaero** mods you have — the minimap, the world map, or both — and their versions.
+    - Your **Cobblemon Raid Dens** version. The mod reads that mod's blocks by name, so a den it
+      stops recognising is usually a Raid Dens update.
+
+    !!! tip "Icons fill in as you walk"
+        The mod only sees dens in chunks your client has already been sent. A map that is not covered
+        in markers after teleporting somewhere new is working correctly, not failing.
+
 ## What happens next
 
 Your post becomes an issue labelled from its tag, and the bot replies in the thread so you know it
@@ -92,4 +104,4 @@ without a change**, because those are not the same thing and you deserve to know
 
 Everyone who reports gets thanked on the mod's community credits page:
 [Routes](routes/credits.md) · [Nuzlocke](nuzlocke/credits.md) · [Picnic](picnic/credits.md) ·
-[Ditto HMs](ditto-hms/credits.md). 💚
+[Ditto HMs](ditto-hms/credits.md) · [Raid Icons](raid-icons/credits.md). 💚
