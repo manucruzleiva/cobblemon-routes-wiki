@@ -38,6 +38,7 @@ flowchart LR
 | `/routes zone expand\|reduce <name> <from> <to>` | 🛡️ | Grow or shrink it by a box. |
 | `/routes zone delete\|rename <name> …` | 🛡️ | Remove it, or rename it. |
 | `/routes zone list` | 🛡️ | Every authored zone: kind, chunks, author. |
+| **Laburo** (item) | 🛡️ | The same zone authoring, by clicking two corners. No recipe — creative only. |
 | `/routes settlement …` | 🛡️ | Your own towns and connections in the gen2 graph. |
 | `/routes config …` | 👤/🛡️ | Read and change this world's settings from in game. |
 | `/routes debug …` | 🛡️ | Thirteen read-only reports, for pasting into a bug report. |
@@ -171,6 +172,35 @@ overrides from `zone override`, which belong to no zone.
     taken. That is not caution for its own sake: a chunk's zone **is** the capture zone, so moving one
     from one zone to another can retroactively change whether a catch already made there was legal.
     `force` goes through anyway, and the report tells you exactly what it overwrote.
+
+---
+
+## 🔴 The Laburo — the same thing, by hand
+
+A red-bladed shovel for map makers. It does the same write the commands above do, but you point at the
+corners instead of typing them.
+
+**It has no recipe.** Take it from the **Tools** tab of the creative inventory, or `/give` it. It does
+nothing at all without operator permission, so a crafting recipe would only put it in a survival
+player's hands and teach them it is broken.
+
+| Do this | And it |
+| --- | --- |
+| **Right-click a block** | sets one corner — then the opposite corner, which creates the zone |
+| **Sneak + right-click** | changes what the next zone will be: **town** → **road** → **nothing** |
+| **Right-click the air** | tells you the mode, and forgets a corner you left pending |
+
+The new zone gets a generic name (`Z1`, `Z2`, …) — rename it with
+`/routes zone rename <name> <newName>`.
+
+!!! note "Why there is no *area* mode"
+    An area is not something you paint. It is the enclosed space the mod finds **between** the painted
+    chunks, so the way to make one is to author the roads that enclose it.
+
+!!! tip "The tool never forces"
+    Where the box crosses ground that already belongs to something, those chunks are left alone and
+    the tool names what stood in the way. There is no gesture for overriding that on purpose —
+    `/routes zone expand <name> <from> <to> force` is, and it stays typed.
 
 ---
 
