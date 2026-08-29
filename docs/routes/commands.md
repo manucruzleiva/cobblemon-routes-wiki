@@ -34,6 +34,10 @@ flowchart LR
 | `/routes zone override <kind> [force]` | 🛡️ | Declare this chunk a different kind, and keep it that way. |
 | `/routes zone clear [force]` | 🛡️ | Hand this chunk back to the generated map. |
 | `/routes zone info` | 🛡️ | What the world generated here vs. what the override says. |
+| `/routes zone create <kind> <from> <to> [name]` | 🛡️ | Author a whole box as a named zone. |
+| `/routes zone expand\|reduce <name> <from> <to>` | 🛡️ | Grow or shrink it by a box. |
+| `/routes zone delete\|rename <name> …` | 🛡️ | Remove it, or rename it. |
+| `/routes zone list` | 🛡️ | Every authored zone: kind, chunks, author. |
 | `/routes settlement …` | 🛡️ | Your own towns and connections in the gen2 graph. |
 | `/routes config …` | 👤/🛡️ | Read and change this world's settings from in game. |
 | `/routes debug …` | 🛡️ | Thirteen read-only reports, for pasting into a bug report. |
@@ -125,6 +129,48 @@ not author.
 ### `zone info` — 🛡️
 Prints both answers side by side for this chunk: what the world generated, and what the override says.
 The first stop when the map and `/routes zone` disagree with each other.
+
+### `zone create <kind> <from> <to> [name] [force]` — 🛡️
+Authors **every chunk of a box** as one kind, under a name you can manage it by afterwards. The two
+corners are ordinary coordinates and accept `~ ~`, so the usual way to draw one is to stand at a
+corner and type `~ ~`, walk to the opposite corner, and type `~ ~` again.
+
+Leave the name out and it gets a generic one — `Z1`, `Z2`, … — which you can change later with
+`zone rename`.
+
+The box is capped at **1024 chunks** (32 × 32). A box over the cap does **nothing at all** rather
+than half of it; build bigger zones in pieces with `zone expand`.
+
+### `zone expand <name> <from> <to> [force]` — 🛡️
+Adds a box to a zone that already exists. The kind comes from the zone itself, not from you — a zone
+with two kinds in it would not be one zone.
+
+### `zone reduce <name> <from> <to>` — 🛡️
+Takes a box back out of that zone. Only chunks of **that** zone are touched, so a box that overspills
+onto a neighbour leaves the neighbour alone — which is why this one needs no `force`.
+
+### `zone delete <name> [force]` — 🛡️
+Hands every chunk of the zone back to the generator. `force` is needed only for chunks somebody else
+authored.
+
+### `zone rename <name> <newName>` — 🛡️
+Renames it. Nothing moves between zones, so nothing on the map changes.
+
+### `zone list` — 🛡️
+Every authored zone: name, kind, how many chunks, and who authored it. Also counts the one-off
+overrides from `zone override`, which belong to no zone.
+
+!!! warning "Authoring a zone does not build anything"
+    These commands decide what ground **counts as** — for the map, for the zone pop-ups, and for the
+    capture zones of [Cobblemon Nuzlocke & Soul Link](../nuzlocke/index.md). They do not put a road
+    in the ground: roads are drawn as terrain generates, so authoring a route across country you have
+    already explored gives you a route on the map with no road under it.
+
+!!! danger "Reassignment is refused on purpose"
+    A chunk that already belongs to something is **refused**, and the report names what it would have
+    taken. That is not caution for its own sake: a chunk's zone **is** the capture zone, so moving one
+    from one zone to another can retroactively change whether a catch already made there was legal.
+    `force` goes through anyway, and the report tells you exactly what it overwrote.
 
 ---
 
