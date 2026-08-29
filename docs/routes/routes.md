@@ -34,8 +34,6 @@ flowchart TD
   lakes are crossed *under* the ice, never paved over it.
 - **Signs everywhere** — directional signs at each end and at junctions, with plaza-paved crossings
   that stand out from the road.
-- **Route trainers** — trainers appear along finished roads, ready to battle (they respect
-  cooldowns and won't pester you twice).
 - **Spawn in a city** — new worlds start next to the nearest city, never in the water.
 
 !!! tip "Tune it per world"
