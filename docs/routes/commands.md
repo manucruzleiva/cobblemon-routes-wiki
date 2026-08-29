@@ -204,6 +204,27 @@ The new zone gets a generic name (`Z1`, `Z2`, …) — rename it with
 
 ---
 
+## 🟩 Areas close themselves
+
+You never draw an area. An area is the space left **between** the roads, so the way to make one is to
+enclose it — and the moment an authoring edit closes a pocket, that pocket is named and marked, and
+whatever you used to close it tells you how many appeared.
+
+That works the same whether you closed the ring with `/routes zone create`, with `expand`, or with the
+Laburo. Areas that close the ordinary way, as the world generates its own roads, are unchanged.
+
+A pocket has to be a reasonable size to count: too small and it is a road curving back on itself, too
+large and it is simply open country.
+
+!!! warning "An area is not un-named if you open it again"
+    Take away the roads that enclosed an area and the ground opens up, but the area keeps its name and
+    its marker. That is deliberate and it is the same rule every other record here follows: it is the
+    register of what somebody has already seen, and in a
+    [Nuzlocke](../nuzlocke/index.md) world catches are counted against it. Quietly retiring one would
+    move a capture zone out from under a catch already made.
+
+---
+
 ## 🏘️ `settlement` — your own towns and connections
 
 A separate subtree from `addcity` and `connect`, and the distinction matters: those two feed the
