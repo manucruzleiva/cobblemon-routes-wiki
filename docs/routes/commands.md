@@ -4,8 +4,12 @@ The complete manual for every **`/routes`** command — the road network.
 
 ```mermaid
 flowchart LR
-    R["/routes"] --> RP[👤 status · list · nearest · zone]
-    R --> RO[🛡️ scan · connect · structures · addcity<br/>rename · tp · weave · repaint · reset]
+    R["/routes"] --> RP["👤 status · list · nearest<br/>zone · config list/get"]
+    R --> RO["🛡️ scan · connect · structures<br/>addcity · rename · tp<br/>weave · repaint · reset"]
+    R --> RZ["🛡️ zone override / clear / info<br/>zones you author"]
+    R --> RS["🛡️ settlement add / remove / list<br/>connect / disconnect"]
+    R --> RC["🛡️ config set / reset<br/>every world setting"]
+    R --> RD["🛡️ debug — 13 read-only reports<br/>gaps · bridge · settlements · …"]
 ```
 
 👤 = every player · 🛡️ = operator (permission level 2)

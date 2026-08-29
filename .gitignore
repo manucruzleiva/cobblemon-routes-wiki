@@ -3,3 +3,8 @@
 .cache/
 .diagram-tmp/
 __pycache__/
+# Herramientas de render de diagramas: tools/render-diagrams.mjs se instala con
+# `npm install --no-save @mermaid-js/mermaid-cli`, que deja estos dos. Nada de eso se versiona:
+# los SVG generados si, el renderer no.
+node_modules/
+package-lock.json
