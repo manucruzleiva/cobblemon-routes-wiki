@@ -155,7 +155,9 @@ Hands every chunk of the zone back to the generator. `force` is needed only for 
 authored.
 
 ### `zone rename <name> <newName>` — 🛡️
-Renames it. Nothing moves between zones, so nothing on the map changes.
+Renames it, and re-marks it under the new name. The old marker stays on the map until you rejoin —
+Xaero owns runtime waypoints and this mod cannot take one back off, so every zone is re-sent from its
+current name and centre when you join.
 
 ### `zone list` — 🛡️
 Every authored zone: name, kind, how many chunks, and who authored it. Also counts the one-off
@@ -192,6 +194,12 @@ player's hands and teach them it is broken.
 
 The new zone gets a generic name (`Z1`, `Z2`, …) — rename it with
 `/routes zone rename <name> <newName>`.
+
+!!! info "An authored zone gets its own marker"
+    A town or a road that the world generated is named from the road network, so its marker comes from
+    there. A zone **you** drew is not in that network — it is named after itself. Its marker carries the
+    zone's own name (`Z1`, or whatever you renamed it to), sits at the middle of it, and comes back
+    every time you rejoin.
 
 !!! note "Why there is no *area* mode"
     An area is not something you paint. It is the enclosed space the mod finds **between** the painted
