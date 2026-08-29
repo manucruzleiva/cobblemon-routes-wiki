@@ -27,6 +27,12 @@ flowchart LR
 | `/routes weave [loops]` | 🛡️ | Force ring roads now (1–16). |
 | `/routes repaint` | 🛡️ | Re-broadcast the map paint to everyone online. |
 | `/routes reset` | 🛡️ | Wipe the roads and re-queue every connection. |
+| `/routes zone override <kind> [force]` | 🛡️ | Declare this chunk a different kind, and keep it that way. |
+| `/routes zone clear [force]` | 🛡️ | Hand this chunk back to the generated map. |
+| `/routes zone info` | 🛡️ | What the world generated here vs. what the override says. |
+| `/routes settlement …` | 🛡️ | Your own towns and connections in the gen2 graph. |
+| `/routes config …` | 👤/🛡️ | Read and change this world's settings from in game. |
+| `/routes debug …` | 🛡️ | Thirteen read-only reports, for pasting into a bug report. |
 
 ---
 
@@ -46,12 +52,6 @@ both. Long lists are capped at 24 lines with an *"… and N more"* trailer.
 Where's civilization? Reports the **closest town** and the **closest route** to where you stand,
 each with the distance in blocks and a compass heading (N, NE, E, …). Great when you're lost in
 open wilderness.
-
-### `zone` — 👤
-The map-paint (and capture-zone) debugger: tells you what the **chunk you are standing in** is
-painted as — a **CITY** (with its name), a **ROUTE** (name and endpoints), an enclosed **AREA**
-(its `A#-Name`, or *unnamed until first entered*), or **open wilderness** (unpainted until your
-network encloses it). Always agrees with the map colours and the zone pop-ups.
 
 ### `scan [radiusChunks]` — 🛡️
 Scans the **already-loaded** chunks around you (default 8, up to **100** chunks radius) and
@@ -93,4 +93,122 @@ refresh without relogging.
 ⚠️ Wipes the **road records** and re-queues every connection from the known cities. Already-paved
 blocks stay in the world; the network rebuilds its bookkeeping from scratch.
 
+---
 
+## 🗺️ `zone` — what the ground under you is
+
+### `zone` — 👤
+The map-paint (and capture-zone) debugger: tells you what the **chunk you are standing in** is
+painted as — a **CITY** (with its name), a **ROUTE** (name and endpoints), an enclosed **AREA**
+(its `A#-Name`, or *unnamed until first entered*), or **open wilderness** (unpainted until your
+network encloses it). Always agrees with the map colours and the zone pop-ups.
+
+### `zone override <kind> [force]` — 🛡️
+Declares the chunk you are standing in to be a **different kind**, and keeps it that way. The kinds
+are the ones the map paints: `city`, `route`, `area`, `wilderness`. The map, the pop-ups and
+`/routes zone` all follow the override from then on.
+
+Overrides are a **second layer** over the generated map, not an edit of it: the underlying paint is
+untouched, so a chunk you clear falls back to whatever the world generated. Tab-completion offers the
+valid kinds.
+
+`force` overrides a chunk that already carries one.
+
+### `zone clear [force]` — 🛡️
+Removes the override on this chunk, handing it back to the generated map. `force` clears one you did
+not author.
+
+### `zone info` — 🛡️
+Prints both answers side by side for this chunk: what the world generated, and what the override says.
+The first stop when the map and `/routes zone` disagree with each other.
+
+---
+
+## 🏘️ `settlement` — your own towns and connections
+
+A separate subtree from `addcity` and `connect`, and the distinction matters: those two feed the
+classic route network, while these feed **gen2's settlement graph** — the one that draws roads during
+worldgen. The two are not the same network.
+
+Declared settlements and connections are remembered with the world and survive a restart.
+
+### `settlement add [name]` — 🛡️
+Registers **where you are standing** as a settlement in the gen2 graph, optionally named. Roads plan
+to it as if the world had generated a town there.
+
+### `settlement remove` — 🛡️
+Removes the declared settlement nearest to you. Only your own: a settlement the world generated is not
+yours to delete.
+
+### `settlement list` — 🛡️
+Every settlement and connection you have declared in this world, with coordinates.
+
+### `settlement connect <x> <z>` — 🛡️
+Declares a road between the settlement nearest to you and the one nearest to `x, z`. A declared
+connection is the one edge nothing is allowed to re-route: it exists because you said those two places
+are joined.
+
+### `settlement disconnect <x> <z>` — 🛡️
+Removes that declaration. The two places may still end up connected by the ordinary rules — this only
+withdraws your instruction.
+
+---
+
+## ⚙️ `config` — read and change this world's settings
+
+The whole tree is generated from the same option catalog the world-creation tabs are built from, so
+every setting on the **ROUTES** tab is reachable here under the same name, and neither surface can
+drift from the other. See [World Creation & Config](configuration.md) for what each one does.
+
+A change is written **twice**: onto the settings the game is reading right now, and into the rules
+stored with the world — so it takes effect immediately *and* survives the next load.
+
+### `config list` — 👤
+Every option and its current value, grouped under the same six headings the ROUTES tab uses.
+
+### `config get <option>` — 👤
+One option and its current value.
+
+### `config set <option> <value>` — 🛡️
+Changes it. The value is typed: a number option only accepts a number **within its own limits**, a
+toggle only accepts true/false, and an option with a fixed set of choices tab-completes them. A list
+option is typed as `a, b, c`.
+
+### `config reset <option>` — 🛡️
+Back to the mod's own default for that option.
+
+!!! warning "Some settings only affect ground that has not generated yet"
+    Anything about the shape of the road network — how many roads leave a town, how long they may be,
+    how steep, how wide — decides what gets **built**. Changing it does not rebuild what is already
+    there. See the note on each option in [Configuration](configuration.md).
+
+---
+
+## 🔬 `debug` — measure it instead of guessing
+
+Operator tooling, and it prints raw English rather than translated text: it exists to be pasted into a
+bug report. Every one of these is **read-only** — none of them changes the world.
+
+Most take a radius in chunks and default to something sensible, so `/routes debug gaps` on its own is
+usually what you want.
+
+| Command | Radius | What it reports |
+| --- | :---: | --- |
+| `debug structures` | — | which structure tags and ids from **Cities include** exist in this world, and what matched. The first stop when a structure type is not being connected |
+| `debug towns [r]` | 8–512, def. 128 | every settlement the seed puts in range, as the road network sees them |
+| `debug settlements [r]` | 8–256, def. 64 | the settlement graph with a **census**: how many roads each rule contributed, and how many were folded into shared trunks. The answer to "why does this world have so many roads" |
+| `debug graph [r]` | 8–512, def. 128 | the graph's nodes and how they cluster |
+| `debug edges [r]` | 8–512, def. 128 | every planned road in range, with its endpoints |
+| `debug paint [r]` | 1–32, def. 8 | what the map layer thinks each chunk around you is |
+| `debug areas [r]` | 1–48, def. 16 | the enclosed areas in range and what bounds them |
+| `debug verify [r]` | 8–512, def. 128 | walks the roads in range and reports anything that does not add up |
+| `debug gaps [r]` | 8–512, def. 128 | every place a road, a tunnel or a bridge hands over to the next, and the size of the step there. **Where a "the road has a hole in it" report starts** |
+| `debug bridge [r]` | 8–512, def. 128 | walks each bridge span and reports cells with no deck, with coordinates |
+| `debug spawn` | — | what the spawn finder decided for this world, and why |
+| `debug bench [columns]` | 16–10000, def. 400 | times the road drawer over that many columns |
+| `debug chunks [count] [away]` | 4–4096, def. 64 | times whole chunk generation, optionally `away` blocks from you so it measures cold ground |
+
+!!! tip "What to paste into a report"
+    For a road that looks wrong: `debug gaps` and, if a bridge is involved, `debug bridge`. For a
+    town that should be connected and is not: `debug structures` and `debug settlements`. For
+    anything slow: `debug chunks`.
