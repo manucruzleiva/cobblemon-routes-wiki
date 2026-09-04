@@ -173,6 +173,9 @@ nav:
       - Commands: raid-icons/commands.md
       - Configuration: raid-icons/configuration.md
       - Community Credits: raid-icons/credits.md
+  - Tree Carve:
+      - tree-carve/index.md
+      - Getting Started: tree-carve/getting-started.md
   - 💛 Sponsor shiero: https://github.com/sponsors/manucruzleiva
 
 hooks:

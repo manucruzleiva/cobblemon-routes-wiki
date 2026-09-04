@@ -45,8 +45,8 @@ Require **permission level 2**:
 ```
 /dittohm give <ability> [player]
 ```
-Gives the HM Disc for the specified ability — the operator's way in, since nothing in
-survival hands one out any more. Right-clicking it still teaches the HM.
+Gives the HM Disc for the specified ability — the operator's way in. Right-clicking the
+disc teaches the HM, the same as one earned in survival.
 
 ```
 /dittohm learn <ability> [player]
