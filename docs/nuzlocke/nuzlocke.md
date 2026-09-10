@@ -38,7 +38,7 @@ creation, under **Capture zones are**:
 
 | Mode | A zone is |
 |---|---|
-| **Geography** | The world Routes draws: every **numbered Area**, every **named route** and every **town** is its own zone. Everything not enclosed in an Area is one shared **Wild** zone, so growing the road network is what earns you new zones. |
+| **Geography** | The world Routes draws: every **numbered Area**, every **named route** and every **town** is its own zone. Everything not enclosed in an Area is one shared **Wild** zone — it is in your log from the first minute, and early on it is most of where you can catch, so growing the road network is what earns you new zones beside it. |
 | **Biome** | The biome you are standing in. This is the classic tabletop rule, and the one that works from the first minute — it does not wait for a road network to exist. |
 | **Both** | The **pair**. A route that crosses taiga and then swamp is two zones and gives you two encounters, listed as *Route 3 — Taiga* and *Route 3 — Swamp*. |
 
@@ -64,7 +64,8 @@ Press **I** (rebindable) for the run's record: every zone you have discovered, w
 there, and whether it is still alive. Four chips across the top — **Alive**, **Dead**, **Waiting**,
 **Empty** — each say how many lines they stand for and turn that group off, so a long run can be read
 down to just the part you are after. Most of a long log is **Empty**: zones you have found and not yet
-had an encounter in. Clicking a Pokémon's sprite opens its summary; one that is dead, released or in the PC says so instead. Your **starter** is in it, and so is anyone's
+had an encounter in. A second row filters by **kind** of zone — towns, routes, areas, sites, the Wild
+and your starter — and the two work together, so "the towns I have not caught in yet" is two clicks. Clicking a Pokémon's sprite opens its summary; one that is dead, released or in the PC says so instead. Your **starter** is in it, and so is anyone's
 [Gym Leader Challenge](#gym-leader-challenge) type. In a [Soul Link](soul-link.md) it becomes the
 link's log.
 

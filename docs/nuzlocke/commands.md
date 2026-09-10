@@ -23,9 +23,15 @@ flowchart LR
 | `/nuzlocke reset [player]` | 🛡️ | Clear a player's zone records and lift their game-over. |
 | `/nuzlocke revive [player]` | 🛡️ | Revive a party's dead Pokémon. The mercy switch. |
 | `/nuzlocke enable` · `disable` | 🛡️ | Master switch for this world, saved per world. |
-| `/nuzlocke set <option> <value>` | 🛡️ | Change any single setting live. Tab-completes the names. |
+| `/nuzlocke config list` | 👤 | Every setting for this world with its current value, by section. |
+| `/nuzlocke config get <setting>` | 👤 | Read one setting back. |
+| `/nuzlocke config set <setting> <value>` | 🛡️ | Change one, live. Offers the names and refuses a value out of range. |
+| `/nuzlocke config reset <setting>` | 🛡️ | Put one back to its default. |
+| `/nuzlocke config reload` | 🛡️ | Re-read the settings file from disk. |
+| `/nuzlocke set <option> <value>` | 🛡️ | The older spelling of `config set`, kept working. |
 | `/nuzlocke debug exp` | 🛡️ | Log what the level cap decides for each EXP gain. |
 | `/nuzlocke soullink …` | 👤 | The co-op suite — see [Soul Link](soul-link.md). |
+| `/pokemonrestart` | 👤 | Wipe your own run and start over. Its own command, not a `/nuzlocke` one — it belongs to the player whose run it is. Type it twice to confirm. |
 
 ### `/nuzlocke soullink`
 
@@ -68,6 +74,20 @@ has its rules overwritten. Picking **Hardcore** at world creation turns the full
 | No bag in battle | on | closes the battle bag |
 | Battle bag blocks | Everything | Everything, or **Healing only** — X items stay legal either way |
 | Above level cap → PC | on | over-cap catches are boxed (the cap itself comes from RCT) |
+| File the dead to the PC | on | a Pokémon that dies is moved out of your party. Your last one always stays |
+| Capture zones are | Geography | what counts as one place — the world Routes draws, the **biome** underfoot, or **both** as a pair |
+| Require nicknames | on | the naming prompt after every acquisition |
+| No trading | on | trades are refused |
+| No forfeit | on | battles cannot be surrendered |
+| Revival Blessing | off | whether that move may revive mid-battle |
+| Healers heal the trainer | on | a healing machine fills your health and hunger too |
+| Healers set your respawn | on | the last healer you used is where you come back |
+| Storm riding risk | 4% | chance per second that lightning finds you riding in the open, 0–100 |
+| Mimic chests | 5% | share of roadside chests that are not chests, 0–100 |
+| Dupes match · Dupes count | evolution line · ever caught | the two halves of the duplicates clause |
+| Mega / Tera OK | on | under a Gym Leader Challenge, a Mega or Tera of your type still counts |
+| Allow Mega · Gigantamax · Z-Moves · Tera | on | switch off any battle gimmick for a stricter run |
+| EXP per KO | on | EXP awarded mid-battle rather than only at the end |
 | Duplicates clause | evolution line | what counts as "already owned" |
 | Egg clause | Encounter | the hatchling takes the zone it hatches in — or ban eggs, or exempt them |
 | Defeated-catch window | 60 s | how long a beaten wild stays catchable — or off |
@@ -105,6 +125,9 @@ has its rules overwritten. Picking **Hardcore** at world creation turns the full
 | Always-aggressive trainers | `ltsurge` | ids that challenge on sight even though leaders normally wait |
 | Challenge delay | 20 | ticks of "!" wind-up before the battle |
 | Trainer skirmishes | on | trainers duel each other nearby |
+| Trainers challenge on sight | on | off = they stay on the roads and never start a fight; you still battle them by right-clicking |
+| Trainers holding post | 70% | share that stay put instead of wandering, 0–100 |
+| Water crossing trainers | — | name fragments used to pick who stands on a water crossing |
 | Fair-fight guard | on | a trainer far above your level never picks the fight |
 | Max trainer level gap | 5 | 0–50 |
 | Gyms beside towns | on | needs a gym pack |
