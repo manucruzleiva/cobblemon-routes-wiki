@@ -33,18 +33,38 @@ flowchart TD
 
 ### Zones
 
-A zone is a place, and the place decides the rule. Every **numbered Area**, every **named route**
-and every **town** is its own capture zone. Everything not enclosed in an Area is a single shared
-**Wild** zone, so growing the road network is what earns you new zones.
+A zone is a place, and the place decides the rule. What counts as one place is your choice at world
+creation, under **Capture zones are**:
 
-Structures are **sites**, and a site grants **one encounter per KIND of site**: your first pillager
-outpost is an encounter, the next outpost is a place you have already spent. Site encounters can be
-switched off entirely at world creation, in which case a structure counts as whatever surrounds it.
+| Mode | A zone is |
+|---|---|
+| **Geography** | The world Routes draws: every **numbered Area**, every **named route** and every **town** is its own zone. Everything not enclosed in an Area is one shared **Wild** zone, so growing the road network is what earns you new zones. |
+| **Biome** | The biome you are standing in. This is the classic tabletop rule, and the one that works from the first minute — it does not wait for a road network to exist. |
+| **Both** | The **pair**. A route that crosses taiga and then swamp is two zones and gives you two encounters, listed as *Route 3 — Taiga* and *Route 3 — Swamp*. |
+
+Under **Geography** and **Both**, structures are **sites**, and a site grants **one encounter per KIND
+of site**: your first pillager outpost is an encounter, the next outpost is a place you have already
+spent. Site encounters can be switched off entirely, in which case a structure counts as whatever
+surrounds it.
+
+Changing the mode part-way through a run re-reads every catch you have already made, which can re-open
+or merge zones you had spent. The setting says so where you pick it.
+
+#### Zones a map maker drew
+
+A world builder can mark out their own towns, routes and areas with Routes'
+[zone commands](../routes/commands.md), and the run plays by them: walking into one announces the name
+they gave it, the one-catch rule covers that whole zone, and the log lists it under that name.
+Resizing or renaming a zone keeps the catch already made in it. Deleting one hands its ground back to
+the zones the generator drew.
 
 ### The log
 
 Press **I** (rebindable) for the run's record: every zone you have discovered, what you caught
-there, and whether it is still alive. Your **starter** is in it, and so is anyone's
+there, and whether it is still alive. Four chips across the top — **Alive**, **Dead**, **Waiting**,
+**Empty** — each say how many lines they stand for and turn that group off, so a long run can be read
+down to just the part you are after. Most of a long log is **Empty**: zones you have found and not yet
+had an encounter in. Clicking a Pokémon's sprite opens its summary; one that is dead, released or in the PC says so instead. Your **starter** is in it, and so is anyone's
 [Gym Leader Challenge](#gym-leader-challenge) type. In a [Soul Link](soul-link.md) it becomes the
 link's log.
 
