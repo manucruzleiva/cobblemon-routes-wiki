@@ -2253,9 +2253,34 @@ live under <a href="../../routes/commands/"><code>/routes</code></a> — the two
 <td>Master switch for this world, saved per world.</td>
 </tr>
 <tr>
+<td><code>/nuzlocke config list</code></td>
+<td style="text-align: center;">👤</td>
+<td>Every setting for this world with its current value, by section.</td>
+</tr>
+<tr>
+<td><code>/nuzlocke config get &lt;setting&gt;</code></td>
+<td style="text-align: center;">👤</td>
+<td>Read one setting back.</td>
+</tr>
+<tr>
+<td><code>/nuzlocke config set &lt;setting&gt; &lt;value&gt;</code></td>
+<td style="text-align: center;">🛡️</td>
+<td>Change one, live. Offers the names and refuses a value out of range.</td>
+</tr>
+<tr>
+<td><code>/nuzlocke config reset &lt;setting&gt;</code></td>
+<td style="text-align: center;">🛡️</td>
+<td>Put one back to its default.</td>
+</tr>
+<tr>
+<td><code>/nuzlocke config reload</code></td>
+<td style="text-align: center;">🛡️</td>
+<td>Re-read the settings file from disk.</td>
+</tr>
+<tr>
 <td><code>/nuzlocke set &lt;option&gt; &lt;value&gt;</code></td>
 <td style="text-align: center;">🛡️</td>
-<td>Change any single setting live. Tab-completes the names.</td>
+<td>The older spelling of <code>config set</code>, kept working.</td>
 </tr>
 <tr>
 <td><code>/nuzlocke debug exp</code></td>
@@ -2266,6 +2291,11 @@ live under <a href="../../routes/commands/"><code>/routes</code></a> — the two
 <td><code>/nuzlocke soullink …</code></td>
 <td style="text-align: center;">👤</td>
 <td>The co-op suite — see <a href="../soul-link/">Soul Link</a>.</td>
+</tr>
+<tr>
+<td><code>/pokemonrestart</code></td>
+<td style="text-align: center;">👤</td>
+<td>Wipe your own run and start over. Its own command, not a <code>/nuzlocke</code> one — it belongs to the player whose run it is. Type it twice to confirm.</td>
 </tr>
 </tbody>
 </table>
@@ -2374,6 +2404,76 @@ has its rules overwritten. Picking <strong>Hardcore</strong> at world creation t
 <td>Above level cap → PC</td>
 <td style="text-align: center;">on</td>
 <td>over-cap catches are boxed (the cap itself comes from RCT)</td>
+</tr>
+<tr>
+<td>File the dead to the PC</td>
+<td style="text-align: center;">on</td>
+<td>a Pokémon that dies is moved out of your party. Your last one always stays</td>
+</tr>
+<tr>
+<td>Capture zones are</td>
+<td style="text-align: center;">Geography</td>
+<td>what counts as one place — the world Routes draws, the <strong>biome</strong> underfoot, or <strong>both</strong> as a pair</td>
+</tr>
+<tr>
+<td>Require nicknames</td>
+<td style="text-align: center;">on</td>
+<td>the naming prompt after every acquisition</td>
+</tr>
+<tr>
+<td>No trading</td>
+<td style="text-align: center;">on</td>
+<td>trades are refused</td>
+</tr>
+<tr>
+<td>No forfeit</td>
+<td style="text-align: center;">on</td>
+<td>battles cannot be surrendered</td>
+</tr>
+<tr>
+<td>Revival Blessing</td>
+<td style="text-align: center;">off</td>
+<td>whether that move may revive mid-battle</td>
+</tr>
+<tr>
+<td>Healers heal the trainer</td>
+<td style="text-align: center;">on</td>
+<td>a healing machine fills your health and hunger too</td>
+</tr>
+<tr>
+<td>Healers set your respawn</td>
+<td style="text-align: center;">on</td>
+<td>the last healer you used is where you come back</td>
+</tr>
+<tr>
+<td>Storm riding risk</td>
+<td style="text-align: center;">4%</td>
+<td>chance per second that lightning finds you riding in the open, 0–100</td>
+</tr>
+<tr>
+<td>Mimic chests</td>
+<td style="text-align: center;">5%</td>
+<td>share of roadside chests that are not chests, 0–100</td>
+</tr>
+<tr>
+<td>Dupes match · Dupes count</td>
+<td style="text-align: center;">evolution line · ever caught</td>
+<td>the two halves of the duplicates clause</td>
+</tr>
+<tr>
+<td>Mega / Tera OK</td>
+<td style="text-align: center;">on</td>
+<td>under a Gym Leader Challenge, a Mega or Tera of your type still counts</td>
+</tr>
+<tr>
+<td>Allow Mega · Gigantamax · Z-Moves · Tera</td>
+<td style="text-align: center;">on</td>
+<td>switch off any battle gimmick for a stricter run</td>
+</tr>
+<tr>
+<td>EXP per KO</td>
+<td style="text-align: center;">on</td>
+<td>EXP awarded mid-battle rather than only at the end</td>
 </tr>
 <tr>
 <td>Duplicates clause</td>
@@ -2520,6 +2620,21 @@ has its rules overwritten. Picking <strong>Hardcore</strong> at world creation t
 <td>Trainer skirmishes</td>
 <td style="text-align: center;">on</td>
 <td>trainers duel each other nearby</td>
+</tr>
+<tr>
+<td>Trainers challenge on sight</td>
+<td style="text-align: center;">on</td>
+<td>off = they stay on the roads and never start a fight; you still battle them by right-clicking</td>
+</tr>
+<tr>
+<td>Trainers holding post</td>
+<td style="text-align: center;">70%</td>
+<td>share that stay put instead of wandering, 0–100</td>
+</tr>
+<tr>
+<td>Water crossing trainers</td>
+<td style="text-align: center;">—</td>
+<td>name fragments used to pick who stands on a water crossing</td>
 </tr>
 <tr>
 <td>Fair-fight guard</td>

@@ -951,6 +951,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Zones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#zones-a-map-maker-drew" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zones a map maker drew
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -2172,6 +2189,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Zones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#zones-a-map-maker-drew" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zones a map maker drew
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -2386,15 +2420,49 @@ the <strong>NUZLOCKE</strong> tab at world creation, and every one of them can b
 </tbody>
 </table>
 <h3 id="zones">Zones<a class="headerlink" href="#zones" title="Permanent link">&para;</a></h3>
-<p>A zone is a place, and the place decides the rule. Every <strong>numbered Area</strong>, every <strong>named route</strong>
-and every <strong>town</strong> is its own capture zone. Everything not enclosed in an Area is a single shared
-<strong>Wild</strong> zone, so growing the road network is what earns you new zones.</p>
-<p>Structures are <strong>sites</strong>, and a site grants <strong>one encounter per KIND of site</strong>: your first pillager
-outpost is an encounter, the next outpost is a place you have already spent. Site encounters can be
-switched off entirely at world creation, in which case a structure counts as whatever surrounds it.</p>
+<p>A zone is a place, and the place decides the rule. What counts as one place is your choice at world
+creation, under <strong>Capture zones are</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>A zone is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Geography</strong></td>
+<td>The world Routes draws: every <strong>numbered Area</strong>, every <strong>named route</strong> and every <strong>town</strong> is its own zone. Everything not enclosed in an Area is one shared <strong>Wild</strong> zone — it is in your log from the first minute, and early on it is most of where you can catch, so growing the road network is what earns you new zones beside it.</td>
+</tr>
+<tr>
+<td><strong>Biome</strong></td>
+<td>The biome you are standing in. This is the classic tabletop rule, and the one that works from the first minute — it does not wait for a road network to exist.</td>
+</tr>
+<tr>
+<td><strong>Both</strong></td>
+<td>The <strong>pair</strong>. A route that crosses taiga and then swamp is two zones and gives you two encounters, listed as <em>Route 3 — Taiga</em> and <em>Route 3 — Swamp</em>.</td>
+</tr>
+</tbody>
+</table>
+<p>Under <strong>Geography</strong> and <strong>Both</strong>, structures are <strong>sites</strong>, and a site grants <strong>one encounter per KIND
+of site</strong>: your first pillager outpost is an encounter, the next outpost is a place you have already
+spent. Site encounters can be switched off entirely, in which case a structure counts as whatever
+surrounds it.</p>
+<p>Changing the mode part-way through a run re-reads every catch you have already made, which can re-open
+or merge zones you had spent. The setting says so where you pick it.</p>
+<h4 id="zones-a-map-maker-drew">Zones a map maker drew<a class="headerlink" href="#zones-a-map-maker-drew" title="Permanent link">&para;</a></h4>
+<p>A world builder can mark out their own towns, routes and areas with Routes'
+<a href="../../routes/commands/">zone commands</a>, and the run plays by them: walking into one announces the name
+they gave it, the one-catch rule covers that whole zone, and the log lists it under that name.
+Resizing or renaming a zone keeps the catch already made in it. Deleting one hands its ground back to
+the zones the generator drew.</p>
 <h3 id="the-log">The log<a class="headerlink" href="#the-log" title="Permanent link">&para;</a></h3>
 <p>Press <strong>I</strong> (rebindable) for the run's record: every zone you have discovered, what you caught
-there, and whether it is still alive. Your <strong>starter</strong> is in it, and so is anyone's
+there, and whether it is still alive. Four chips across the top — <strong>Alive</strong>, <strong>Dead</strong>, <strong>Waiting</strong>,
+<strong>Empty</strong> — each say how many lines they stand for and turn that group off, so a long run can be read
+down to just the part you are after. Most of a long log is <strong>Empty</strong>: zones you have found and not yet
+had an encounter in. A second row filters by <strong>kind</strong> of zone — towns, routes, areas, sites, the Wild
+and your starter — and the two work together, so "the towns I have not caught in yet" is two clicks. Clicking a Pokémon's sprite opens its summary; one that is dead, released or in the PC says so instead. Your <strong>starter</strong> is in it, and so is anyone's
 <a href="#gym-leader-challenge">Gym Leader Challenge</a> type. In a <a href="../soul-link/">Soul Link</a> it becomes the
 link's log.</p>
 <h2 id="gym-leader-challenge">🎓 Gym Leader Challenge<a class="headerlink" href="#gym-leader-challenge" title="Permanent link">&para;</a></h2>
